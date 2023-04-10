@@ -6,6 +6,8 @@ router.get("/products", productController.getAllProducts);
 
 // Obtener todos los productos por categoría
 // Obtener un producto específico
+router.get('/product/', productController.getAllProducts)
+
 // Añadir producto
 router.post("/product", productController.addProduct)
 

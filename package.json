@@ -6,11 +6,11 @@
   "scripts": {
     "start": "nodemon index.js"
   },
-  "author": "Neo",
+  "author": "Seba",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
-    "mongoose": "^7.0.2"
+    "mongoose": "^7.0.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.21"
