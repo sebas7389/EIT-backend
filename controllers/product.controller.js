@@ -56,10 +56,55 @@ function deleteProduct(req, res) {
         })
 }
 
+function getProduct(req, res) {
+    const id = req.query.id// Lo enviamos por query en el postman
+    const idParam = req.params.id;
+    if(!idParam) {
+        return res.status(400).send({
+            msg:`Es necesario que mande un ID`
+        })
+    }
+}
+
+async function updateProduct (req, res) {
+    try {
+        const id = req.query.id
+        const data =req.body
+
+       const newProduct = await Product.findByidAndUpdate(id,data , {new: true})
+
+       if(!newProduct) {
+        return res.status(404).send ({
+            msg:`El producto no se actualizo`,
+        })
+       }
+
+       return res.status(200).send({
+        msg:`Producto Actualizado`, 
+        newProduct: newProduct
+       })
+        //     .then ((data )=> {
+        //         console.log(data);
+        //         return res.status(200).send ({
+        //             msg:`Producto actualizado`, productUpdated:productUpdated
+        //         })
+        //     })
+        }  catch(error)  {
+                console.log(error);
+                return res.status(500).send ({
+                    msg:`No se pudo actualizar el producto`,
+                
+            })
+        }
+
+    }
+
 
 
 module.exports = {
     getAllProducts,
     deleteProduct,
-    addProduct
+    addProduct,
+    getProduct,
+    updateProduct
 }
