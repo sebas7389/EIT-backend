@@ -1,14 +1,18 @@
 {
-  "name": "04--nodejs--express-mongoose",
+  "name": "04---nodejs---express---mongoose",
   "version": "0.0.1",
-  "description": "Servidor Ecommerce en NodeJS, express, Mongoose, JWT, con GRUD de Users, Productos, Ordenes.",
+  "description": "Servidor Ecommerce en NodeJS, Express, Mongoose, JWT, con CRUD de Users, Productos, Ordenes.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
   },
-  "author": "Seba",
+  "author": "Neo",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mongoose": "^7.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
   }
 }
